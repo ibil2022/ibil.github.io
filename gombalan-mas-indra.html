@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <title></title>
+  <style type="text/css">
+  /*  ____________________ GOMBALAN ____________________ */
+  .container {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 175px;
+  }
+
+  .gombalann {
+    text-align: center;
+    background-color: #bbb;
+    border-radius: 10px;
+    padding: 30px;
+    border-radius: 20px;
+    border: 3px solid black;
+    box-shadow: 10px 10px 0 -3px #61f4de, 10px 10px 0 0 black;
+    transition: box-shadow 300ms ease-out;
+  }
+
+  h2 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+
+  #gomball {
+    margin-top: -8px;
+    font-size: 24px;
+    color: #000;
+    margin-bottom: 20px;
+  }
+
+  #gombalBtn {
+    font-size: 18px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 3px solid black;
+    box-shadow: 7px 7px 0 -3px #61f4de, 7px 7px 0 0 black;
+    transition: box-shadow 300ms ease-out;
+  }
+
+  #gombalBtn:hover {
+    background-color: #555;
+  }
+
+  @media (max-width: 425px) {
+    .container {
+      width: 100%;
+      margin: 0 auto;
+      text-align: center;
+      margin-top: 175px;
+    }
+
+    .gombalann {
+      text-align: center;
+      background-color: #bbb;
+      border-radius: 10px;
+      padding: 30px;
+      border-radius: 20px;
+      border: 3px solid black;
+      box-shadow: 10px 10px 0 -3px #61f4de, 10px 10px 0 0 black;
+      transition: box-shadow 300ms ease-out;
+      width: 70%;
+      margin-left: 19px;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    #gomball {
+      margin-top: -8px;
+      font-size: 1.25rem;
+      color: #000;
+      margin-bottom: 20px;
+    }
+
+    #gombalBtn {
+      font-size: 1rem;
+      padding: 10px 20px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      border-radius: 10px;
+      border: 3px solid black;
+      box-shadow: 7px 7px 0 -3px #61f4de, 7px 7px 0 0 black;
+      transition: box-shadow 300ms ease-out;
+    }
+
+    #gombalBtn:hover {
+      background-color: #555;
+    }
+  }
+  /*  ____________________ GOMBALAN ____________________ */
+
+  /*  ____________________ BACKGROUND STAR ____________________ */
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/galaxy.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    z-index: -1;
+  }
+
+  .stars,
+  .twinkling,
+  .clouds {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+
+  .stars {
+    background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/stars.png") repeat;
+    z-index: 0;
+    z-index: -1;
+  }
+
+  .twinkling {
+    background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/twinkling.png") repeat;
+    z-index: 1;
+    animation: move-twink-back 200s linear infinite;
+    z-index: -1;
+  }
+
+  .clouds {
+    background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/clouds.png") repeat-x;
+    z-index: 2;
+    animation: move-clouds-back 200s linear infinite;
+    z-index: -1;
+  }
+
+  .title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+    z-index: 3;
+    z-index: -1;
+  }
+
+  @keyframes move-twink-back {
+    from { background-position: 0 0; }
+    to { background-position: 10000px 5000px; }
+  }
+
+  @keyframes move-clouds-back {
+    from { background-position: 0 0; }
+    to { background-position: 10000px 0; }
+  }
+  /*  ____________________ BACKGROUND STAR ____________________ */
+  </style>
+</head>
+<body>
+  <!-- ____________________ BACKGROUND STAR ____________________  -->
+  <div class="stars"></div>
+    <div class="twinkling"></div>
+    <div class="clouds"></div>
+  </div>
+  <!-- ____________________ BACKGROUND STAR ____________________  -->
+
+
+  <!-- ____________________ GOMBALAN ____________________  -->
+  <div class="container">
+    <div class="gombalann animate__animated animate__tada animate__delay-1s">
+      <!-- <h2>gombalan mas indra</h2> -->
+      <p id="gomball"></p>
+      <button id="gombalBtn">gombalin de bila!</button>
+    </div>
+  </div>
+  <!-- ____________________ GOMBALAN ____________________  -->
+
+<script type="text/javascript">
+  // ____________________ GOMBALAN ____________________ 
+  const gombalList = [
+    "I LOVE YOU DEDE NABILA ALISA !!!.",
+    "kalo hidup dede sebuah buku, mas pengen deh jadi halaman terakhirnya.",
+    "dede tau ga kalau kalo dede jadi angin, mas pengen jadi dedaunan yang dede tiup-tiupin.",
+    "kalo mas jadi novelis, dede pasti jadi tokoh utama di novelnya.",
+    "dede kayak diorama museum. ngga pernah berubah-ubah, tapi selalu bikin mas terpesona.",
+    "dede adalah satu-satunya alasan mas tetap melihat ke bawah ketika mas berjalan di atas jalan setapak.",
+    "dede adalah satu-satunya yang bikin mas pengen menghabiskan hari-hari dengan ngeliat dede ketawa.",
+    "Kalo kamu jadi seniman, kamu pasti jadi lukisan yang nggak ada duanya."
+  ];
+
+  const gombalEl = document.getElementById('gomball');
+  const gombalBtn = document.getElementById('gombalBtn');
+
+  gombalBtn.addEventListener('click', showGombal);
+
+  function showGombal() {
+    const randomIndex = Math.floor(Math.random() * gombalList.length);
+    const randomGombal = gombalList[randomIndex];
+    gombalEl.textContent = randomGombal;
+  }
+  // ____________________ GOMBALAN ____________________ 
+</script>
+</body>
+</html>

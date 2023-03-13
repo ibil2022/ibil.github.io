@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" type="image/x-icon" href="assets/cat-web-icon.png">
+	<title>Games</title>
+	<style type="text/css">
+  /*  ____________________ DEFAULT ____________________ */
+  @import url('https://fonts.googleapis.com/css?family=Montserrat');
+  @import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=VT323&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+  /*  ____________________ DEFAULT ____________________ */
+
+
+  /*  ____________________ BACKGROUND STAR ____________________ */
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/galaxy.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    z-index: -1;
+  }
+
+  .stars,
+  .twinkling,
+  .clouds {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+
+  .stars {
+    background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/stars.png") repeat;
+    z-index: 0;
+    z-index: -1;
+  }
+
+  .twinkling {
+    background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/twinkling.png") repeat;
+    z-index: 1;
+    animation: move-twink-back 200s linear infinite;
+    z-index: -1;
+  }
+
+  .clouds {
+    background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/clouds.png") repeat-x;
+    z-index: 2;
+    animation: move-clouds-back 200s linear infinite;
+    z-index: -1;
+  }
+
+  .title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+    z-index: 3;
+    z-index: -1;
+  }
+
+  .title h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    z-index: -1;
+  }
+
+  @keyframes move-twink-back {
+    from { background-position: 0 0; }
+    to { background-position: 10000px 5000px; }
+  }
+
+  @keyframes move-clouds-back {
+    from { background-position: 0 0; }
+    to { background-position: 10000px 0; }
+  }
+  /*  ____________________ BACKGROUND STAR ____________________ */
+
+
+  /*  ____________________ CARD GAMES ____________________ */
+  body {
+    font-family: 'Raleway', cursive;
+  }
+
+  h1 {
+    color: white;
+  }
+
+	.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 300px;
+    background-color: #aaa;
+    border-radius: 4px;
+    overflow: hidden;
+  	border-radius: 10px;
+    border: 1px solid whitesmoke;
+  }
+
+  .card-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+  }
+
+  .card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .card-content {
+    padding: 20px;
+  }
+
+  .card-content h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    margin-top: -10px;
+    text-align: center;
+  }
+
+  .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+    margin-left: 72px;
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
+    color: #fff;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 30px;
+    padding: 12px 24px;
+    font-size: 16px;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .btn:hover {
+    background-color: #2e7d32;
+    transform: translateY(-2px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.4);
+  }
+  /*  ____________________ CARD GAMES ____________________ */
+	</style>
+</head>
+<body>
+  <!-- ____________________ BACKGROUND STAR ____________________ -->
+  <div class="stars"></div>
+    <div class="twinkling"></div>
+    <div class="clouds"></div>
+  </div>
+  <!-- ____________________ BACKGROUND STAR ____________________ -->
+
+
+  <!-- ____________________ CARD GAMES ____________________ -->
+	<h1 style="text-align: center;">Games</h1>
+  <div class="card-container">
+    <div class="card">
+      <div class="card-image">
+        <img src="assets/img1.png">
+      </div>
+      <div class="card-content">
+        <h2>2048 Game</h2>
+        <a href="game_2048.html" class="btn">yuk main</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-image">
+        <img src="assets/img1.png">
+      </div>
+      <div class="card-content">
+        <h2>Game Tebak Warna</h2>
+        <a href="game_tebakwarna.html" class="btn">yuk main</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-image">
+        <img src="assets/img1.png">
+      </div>
+      <div class="card-content">
+        <h2>Kuis</h2>
+        <a href="game_kuis.html" class="btn">yuk main</a>
+      </div>
+    </div>
+  </div>
+  <!-- ____________________ CARD GAMES ____________________ -->
+	
+</body>
+</html>

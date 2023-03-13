@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ibil</title>
+  <link rel="shortcut icon" type="image/x-icon" href="assets/cat-web-icon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+	<style>
+  /*______________________________ DEFAULT ______________________________*/
+  @import url('https://fonts.googleapis.com/css?family=Montserrat');
+  @import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=VT323&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    /*font-family: 'Montserrat', sans-serif;*/
+    /*font-family: 'DotGothic16', sans-serif;*/
+    /*font-family: 'VT323', monospace;*/
+    /*font-family: 'Playfair Display', serif;*/
+    /*font-family: 'Abril Fatface', cursive;*/
+    /*font-family: 'Abril Fatface', cursive;*/
+    /*font-family: 'Lato', sans-serif;*/
+    /*font-family: 'Roboto Slab', serif;*/
+    /*font-family: 'Merriweather', serif;*/
+    font-weight: 50;
+  }
+
+  body {
+    background-color: #00020F;
+  }
+  /*______________________________ DEFAULT ______________________________*/
+
+
+  /*______________________________ SCROLLBAR ______________________________*/
+  ::-webkit-scrollbar {
+    width: 8px;
+    /*background-image: linear-gradient(180deg, #ff00ff, #0000ff);*/
+    background-image: linear-gradient(180deg, #61f4de, #0000ff);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(0,0,0,.1);
+    border-radius: 8px;
+  }
+  /*______________________________ SCROLLBAR ______________________________*/
+
+
+  /*______________________________ PRELOADER ______________________________*/
+  .loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 9999;
+  }
+
+  .loading-text {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+
+  .loading-cat {
+    width: 250px;
+    height: 250px;
+  }
+
+  .loading-cat img {
+    width: 100%;
+    height: 100%;
+  }
+  /*______________________________ PRELOADER ______________________________*/
+
+
+  /*______________________________ PARALLAX CSS ______________________________*/
+  .section1 {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: #fff;
+  }
+
+  .section1 {
+    background: url('assets/hero.jpg') no-repeat center fixed;
+    background-size: cover;
+  }
+  /*______________________________ PARALLAX CSS ______________________________*/
+
+
+  /*______________________________ GOOGLE MAPS EMBED ______________________________*/
+  .google-maps {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .google-maps-text {
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Raleway', cursive;
+    color: #FCAE1E;
+  }
+
+  iframe {
+    width: 70%;
+    height: 100%;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 25px;
+  }
+
+  iframe:hover {
+    transform: scale(1.1);
+    transition: all 0.5s ease-in-out;
+  }
+
+  @media (max-width: 425px) {
+    iframe {
+      width: 85%;
+      height: 100%;
+      border: none;
+      border-radius: 5px;
+      margin-bottom: 25px;
+    }
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+  /*______________________________ GOOGLE MAPS EMBED ______________________________*/
+
+
+  /*______________________________ ARTICLE ______________________________*/
+  .article-container {
+    margin-top: -150px;
+    max-width: 40%;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: justify;
+    color: #FCAE1E;
+    font-family: 'Raleway', cursive;
+    line-height: 1.5;
+  }
+
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  @media screen and (max-width: 500px) {
+      .article-container {
+      max-width: 65%;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: justify;
+    }
+  }
+  /*______________________________ ARTICLE ______________________________*/
+
+
+  /*______________________________ CARD IMAGES ______________________________*/
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+  }
+
+  .card {
+    width: 30%;
+    margin: 2%;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .card-image img {
+    width: 400px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+
+  .card .card-image {
+    transition: filter 0.2s ease-in-out;
+  }
+
+  .card:hover .card-image {
+    filter: brightness(1.2);
+    transition: filter 0.4s ease-in-out;
+  }
+
+  .popup-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 888;
+  }
+
+  .popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 80%;
+    max-height: 80%;
+    z-index: 888;
+  }
+
+  .popup-content img {
+    width: 900px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 8px;
+    z-index: 888;
+  }
+
+  @media (max-width: 425px) {
+    .card {
+      width: 90%;
+    }
+    .card-container {
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 25px;
+      margin-left: 85px; 
+    }
+    .popup-container {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .popup-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    .popup-content img {
+      width: 550px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+  }
+  /*______________________________ CARD IMAGES ______________________________*/
+
+
+  /*______________________________ FAQ QUESTIONS ______________________________*/
+  .faq-container {
+    font-family: 'Raleway', cursive;
+    max-width: 50%;
+    margin: 0 auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    color: #FCAE1E;
+  }
+
+  .faq-question {
+    margin: 20px 0;
+    cursor: pointer;
+  }
+
+  .faq-container h2 {
+    font-size: 36px;
+    position: relative;
+    animation: bounce 2s ease-in-out infinite;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .faq-question h3 {
+    font-size: 20px;
+    margin-bottom: 25px;
+    position: relative;
+  }
+
+  .faq-question h3::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #FCAE1E;
+    transition: width 0.3s ease-in-out;
+  }
+
+  .faq-question:hover h3::before {
+    width: 100%;
+  }
+
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+  }
+
+  .faq-answer p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .faq-question.open .faq-answer {
+    max-height: 200px;
+  }
+
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-5px);
+    }
+    60% {
+      transform: translateY(-2px);
+    }
+  }
+  /*______________________________ FAQ QUESTIONS ______________________________*/
+
+
+  /*______________________________ TIMER COUNTDOWN ______________________________*/
+  .countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    margin: 2rem;
+    font-family: 'Raleway', cursive;
+    color: #FCAE1E;
+  }
+
+  .text-countdown {
+    margin-top: -25px;
+    text-align: center;
+    font-family: 'Raleway', cursive;
+    font-size: 1.5rem;
+    color: #FCAE1E;
+    margin-bottom: 25px;
+  }
+
+  .countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .countdown-item:hover {
+    transform: scale(1.1);
+  }
+
+  .countdown-label {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .countdown-time {
+    font-weight: bold;
+    font-size: 2.5rem;
+    color: #FCAE1E;
+    background-color: #333;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
+  }
+  /*______________________________ TIMER COUNTDOWN ______________________________*/
+
+
+  /*______________________________ LINK SECTION ______________________________*/
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 30px;
+    height: 95px;
+    width: 600px;
+    margin: 0 auto;
+    z-index: 99;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-family: 'Raleway', cursive;
+  }
+
+  .link1:hover {
+    animation-name: bounce;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+  }
+
+  .link2:hover {
+    animation-name: bounce;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+  }
+
+  .link3:hover {
+    animation-name: bounce;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+  }
+
+  .link4:hover {
+    animation-name: bounce;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+  }
+
+  .link1 {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    background-color: #FCAE1E;
+  }
+
+  .link2 {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    background-color: #FCAE1E;
+  }
+
+  .link3 {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    background-color: #FCAE1E;
+  }
+
+  .link4 {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    background-color: #FCAE1E;
+  }
+
+  .container a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+    font-size: 16px;
+    text-decoration: none;
+    height: 100%;
+
+    border-radius: 7px;
+    border: 3px solid black;
+    box-shadow: 8px 8px 0 -3px #61f4de, 8px 8px 0 0 black;
+    transition: box-shadow 300ms ease-out;
+  }
+
+  .container a:hover {
+    filter: brightness(1.1);
+    transition: filter 0.4s ease-in-out;
+  }
+
+
+  @media (max-width: 425px) {
+    .container {
+      height: 95px;
+      width: 550px;
+      margin: 0 auto;
+      z-index: 99;
+      margin-top: 50px;
+      margin-bottom: 50px;
+      font-family: 'Raleway', cursive;
+    }
+  }
+  /*______________________________ LINK SECTION ______________________________*/
+
+
+  /*______________________________ PETASAN ______________________________*/
+  .container-petasan {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .link0 {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    font-size: 16px;
+    text-decoration: none;
+    height: 110%;
+    width: 25%;
+    background-color: #FCAE1E;
+
+    border-radius: 7px;
+    border: 3px solid black;
+    box-shadow: 8px 8px 0 -3px #61f4de, 8px 8px 0 0 black;
+    transition: box-shadow 300ms ease-out;
+    margin-bottom: 35px;
+  }
+
+  .link0:hover {
+    animation-name: bounce;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    
+    filter: brightness(1.2);
+    transition: filter 0.4s ease-in-out;
+  }
+
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+  }
+  /*______________________________ PETASAN ______________________________*/
+
+
+  /*______________________________ FOOTER ______________________________*/
+  footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #00020F;
+    color: #FCAE1E;
+    padding: 20px;
+  }
+
+  .social-media {
+    display: flex;
+    align-items: center;
+    margin-right: 30%;
+  }
+
+  .social-media a {
+    display: inline-block;
+    font-size: 24px;
+    margin-right: 20px;
+    color: ##FCAE1E;
+    transition: transform 0.3s;
+  }
+
+  .social-media a:hover {
+    transform: scale(1.2);
+  }
+
+  .facebook:hover {
+    color: #3b5998;
+  }
+
+  .instagram:hover {
+    color: #e1306c;
+  }
+
+  .twitter:hover {
+    color: #1da1f2;
+  }
+
+  .love {
+    font-size: 24px;
+    animation: pulse 1s ease-in-out infinite;
+    color: red;
+  }
+  .love:hover {
+
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.9);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  /*______________________________ FOOTER ______________________________*/
+
+
+  /*______________________________ SCROLL TO TOP ______________________________*/
+  #scroll-to-top {
+    position: fixed;
+    right: 20px;
+    bottom: -100px;
+    z-index: 999;
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+
+  #scroll-to-top:hover {
+    transform: translateY(10px);
+    animation-name: pulse;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+  }
+
+  #scroll-to-top.active {
+    animation: shake 0.5s;
+  }
+
+  @keyframes shake {
+    0% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(25px);
+    }
+    50% {
+      transform: translateX(-25px);
+    }
+    75% {
+      transform: translateX(25px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  #scroll-to-top img {
+    width: 60px;
+    height: 60px;
+    transform: rotate(-45deg);
+  }
+  /*______________________________ SCROLL TO TOP ______________________________*/
+
+
+  /*______________________________ AUDIO ______________________________*/
+  .music-player-container {
+    position: fixed;
+    bottom: 15px;
+    left: 15px;
+    z-index: 9999;
+  font-family: 'Raleway', cursive;
+  }
+
+  .music-player-container:hover {
+    cursor: pointer;
+  }
+
+  .music-player {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #00020F;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 3px solid #FCAE1E;
+    box-shadow: 0 5px 10px #00020F;
+  }
+
+  .music-player i {
+    color: #FCAE1E;
+  }
+
+  #play-pause-btn {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+  }
+  /*______________________________ AUDIO ______________________________*/
+	</style>
+</head>
+<body>
+  <!-- ______________________________ PRELOADER ______________________________ -->
+  <div class="loading-screen">
+    <div class="loading-text">
+    </div>
+    <div class="loading-cat">
+      <img src="assets/preloader-cat.gif">
+    </div>
+  </div>
+  <!-- ______________________________ PRELOADER ______________________________ -->
+
+  <!-- ______________________________ SCROLL TO TOP ______________________________ --> 
+  <button id="scroll-to-top">
+    <img src="assets/roket.png" alt="Rocket" style="width: 60px; height: 60px;" />
+  </button>
+  <!-- ______________________________ SCROLL TO TOP ______________________________ --> 
+
+  <!-- ______________________________ PARALLAX SECTION ______________________________ -->
+	<section class="section1">
+		<h1 class="sectiontext">Nabila & Indra</h1>
+	</section>
+  <!-- ______________________________ PARALLAX SECTION ______________________________ -->
+
+
+  <!-- ______________________________ LINK SECTION ______________________________ --> 
+  <div class="container">
+    <a href="galeri.html" class="link1">📷 &nbsp; Galeri</a>
+    <a href="profil.html" class="link2">💑 &nbsp; Profil</a>
+    <a href="gombalan-mas-indra.html" class="link3">🔒 &nbsp; Uwu</a>
+    <a href="games.html" class="link4">🎮 &nbsp; Games</a>
+  </div>
+  <!-- ______________________________ LINK SECTION ______________________________ --> 
+
+
+  <!-- ______________________________ GOOGLE MAPS EMBED ______________________________ -->
+  <h2 class="google-maps-text">First Meet Place</h2>
+  <div class="google-maps">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63275.71261365908!2d110.93902522854239!3d-7.604112318406548!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a18aeeb6a8c19%3A0x4027a76e35302c0!2sKaranganyar%2C%20Kec.%20Karanganyar%2C%20Kabupaten%20Karanganyar%2C%20Jawa%20Tengah!5e0!3m2!1sid!2sid!4v1678348295685!5m2!1sid!2sid"></iframe>
+  </div>
+  <!-- ______________________________ GOOGLE MAPS EMBED ______________________________ -->
+
+
+  <!-- ______________________________ ARTICLE ______________________________ --> 
+    <div class="article-container">
+    <h1>Cerita Bucin</h1>
+    <p>Pada suatu hari, tanggal 20 Februari 2022, seorang Laki-laki yang bernama Indra Bayu Setiadi Utomo (24) yang berasal dari Jakarta dan Perempuan yang bernama Nabila Alisa (21) yang berasal dari Karanganyar Jawa Tengah, pertama kali bertemu dan kenalan di sebuah Random Chat Bot pada aplikasi Telegram.</p><br>
+
+    <p>Dalam beberapa bulan, Indra dan Nabila menjadi sangat dekat. Mereka sering mengobrol lewat pesan maupun lewat call dan video call, saling bertukar cerita dan menemukan banyak kesamaan. Mereka merasa semakin dekat dan sering berbincang meski terpisah jarak yang cukup jauh. Walaupun mereka belum pernah bertemu, namun pasangan ini saling percaya satu sama lain.</p><br>
+
+    <p>Namun, ada satu hal yang membuat Nabila sedikit ragu untuk meneruskan hubungan mereka. Mereka berdua tinggal di kota yang berbeda, dan terpisah jarak yang cukup jauh. Meskipun demikian, Indra terus mencoba untuk membuat Nabila yakin dan terus mencoba menjalin hubungan jarak jauh atau LDR. Mereka menyadari bahwa LDR memang sulit, akhirnya Indra dan Nabila tetap optimis dan terus mencoba mempertahankan hubungan mereka.</p><br>
+
+    <p>Selama setahun lebih bersama, Indra dan Nabila saling berusaha mempertahankan hubungan mereka. Mereka menghabiskan waktu berjam-jam di depan HP, mencoba mengenal satu sama lain sebanyak mungkin dan membangun kepercayaan untuk terus bersama. Setelah persiapan yang cukup lama, akhirnya mereka memutuskan bertemu untuk pertama kalinya di daerah tempat tinggal Nabila yaitu di Karanganyar Jawa Tengah.</p><br>
+
+    <p>Gimanaa? pasti penasaran kan gimana kelanjutan cerita uwu dari pasangan ini? nanti akan ada cerita seru lainnyaaa, tunggu yaa 🤭</p>
+
+    <!-- <p>Setelah satu tahun menjalani hubungan jarak jauh, akhirnya mereka memutuskan untuk bertemu. Keduanya merasa sangat gugup dan cemas menjelang pertemuan mereka yang pertama. Namun begitu melihat satu sama lain, gugup dan cemas tersebut hilang seketika. Mereka begitu merasa nyaman dan bahagia bersama. Pertemuan itu menjadi awal dari perjalanan romantis mereka yang penuh cinta dan kesetiaan. Meskipun jarak masih memisahkan mereka, keduanya selalu berusaha untuk tetap menjaga hubungan mereka dan meyakini bahwa cinta mereka akan terus tumbuh dan berkembang tanpa terhalang oleh jarak dan waktu.</p> -->
+  </div>
+  <!-- ______________________________ ARTICLE ______________________________ -->
+
+
+  <!-- ______________________________ CARD IMAGES ______________________________ -->
+  <div class="card-container">
+    <div class="card">
+      <div class="card-image animate__animated animate__bounceIn animate__delay-1s">
+        <img src="assets/alun-alun-karanganyar.jpg">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-image animate__animated animate__bounceIn animate__delay-1s">
+        <img src="assets/richeese_factory.jpg">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-image animate__animated animate__bounceIn animate__delay-1s">
+        <img src="assets/mie-gacoan.jpg">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-image animate__animated animate__bounceIn animate__delay-1s">
+        <img src="assets/mixue.jpg">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-image animate__animated animate__bounceIn animate__delay-1s">
+        <img src="assets/pantai-jogja.jpg">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-image animate__animated animate__bounceIn animate__delay-1s">
+        <img src="assets/bukit-bintang.jpg">
+      </div>
+    </div>
+
+  </div>
+
+  <div class="popup-container">
+    <div class="popup-content">
+      <img src="" alt="">
+    </div>
+  </div>
+  <!-- ______________________________ CARD IMAGES ______________________________ -->
+
+
+  <!-- ______________________________ FAQ QUESTIONS ______________________________ -->
+  <div class="faq-container">
+    <h2>Frequently Ask Questions</h2>
+    <div class="faq-question">
+      <h3>dede udah mam belum?</h3>
+      <div class="faq-answer">
+        <p>soalnya mas khawatir terus kalo dede belum mam apa lagi kalo dede sampe telat mam 😥</p>
+      </div>
+    </div>
+    <div class="faq-question">
+      <h3>dede lagi apa?</h3>
+      <div class="faq-answer">
+        <p>berarti kalo mas nanya itu mas mau tau banget dede lagi ngapain hehe</p>
+      </div>
+    </div>
+    <div class="faq-question">
+      <h3>dede ada tugas ngga?</h3>
+      <div class="faq-answer">
+        <p>berarti mas mau ngingetin dede misalkan dede ada tugas jangan ditunda-tunda ya ngerjainnya, semangat ya dedeee 😘</p>
+      </div>
+    </div>
+    <div class="faq-question">
+      <h3>dede udah minum obat penambah darahnya belum?</h3>
+      <div class="faq-answer">
+        <p>soalnya mas khawatir kalo dede lupa minum obat biasanya suka pusing ☹️</p>
+      </div>
+    </div>
+    <div class="faq-question">
+      <h3>dede lagi sendirian ngga di rumah?</h3>
+      <div class="faq-answer">
+        <p>artinyaaa mas kangen pengen vc atau call, biasanya mas nanya ini pas malem jumat hehe ❤️</p>
+      </div>
+    </div>
+    <div class="faq-question">
+      <h3>dede sayang banget ngga sama mas Indra?</h3>
+      <div class="faq-answer">
+        <p>artinyaa mas indra sayanggg banget sama dede bila, jangan sering badmood ya de walaupun mas sering bikin kesel. I LOVE YOU DEDE NABILA ALISA, jangan tinggalin mas ya de ❤️</p>
+      </div>
+    </div>
+  </div>
+  <!-- ______________________________ FAQ QUESTIONS ______________________________ -->
+
+
+  <!-- ______________________________ TIMER COUNTDOWN ______________________________ -->
+  <div class="countdown">
+    <div class="countdown-item">
+      <span class="countdown-time" id="days"></span>
+      <span class="countdown-label">Hari</span>
+    </div>
+    <div class="countdown-item">
+      <span class="countdown-time" id="hours"></span>
+      <span class="countdown-label">Jam</span>
+    </div>
+    <div class="countdown-item">
+      <span class="countdown-time" id="minutes"></span>
+      <span class="countdown-label">Menit</span>
+    </div>
+    <div class="countdown-item">
+      <span class="countdown-time" id="seconds"></span>
+      <span class="countdown-label">Detik</span>
+    </div>
+    <br>
+  </div>
+  <h2 class="text-countdown">menuju First Date kitaaa</h2>
+  <!-- ______________________________ TIMER COUNTDOWN ______________________________ -->
+
+
+  <!-- ______________________________ PETASAN ______________________________ -->
+  <div class="container-petasan">
+    <a href="petasan.html" class="link0">🎆</a>
+  </div>
+  <!-- ______________________________ PETASAN ______________________________ -->
+
+
+  <!-- ______________________________ FOOTER ______________________________ -->
+  <footer>
+    <!-- <div class="social-media">
+      <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+    </div> -->
+    <div class="love">
+      <i class="fas fa-heart"></i>
+    </div>
+  </footer>
+  <!-- ______________________________ FOOTER ______________________________ -->
+
+
+  <!-- ______________________________ AUDIO ______________________________ -->
+  <div class="music-player-container">
+    <audio id="audio" src="assets/imyours.mp3" autoplay loop></audio>
+    <div class="music-player">
+      <button id="play-pause-btn"><i class="fa fa-play"></i></button>
+    </div>
+  </div>
+  <!-- ______________________________ AUDIO ______________________________ -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+	<script type="text/javascript">
+  // ______________________________ PRELOADER ______________________________
+    gsap.to(".loading-text", { duration: 1, opacity: 0, delay: 2 });
+    gsap.to(".loading-cat", { duration: 1, opacity: 0, delay: 2, onComplete: showContent });
+
+    function showContent() {
+      document.body.style.overflow = "visible";
+      gsap.to(".loading-screen", { duration: 1, opacity: 0, delay: 0.5, onComplete: removeLoadingScreen });
+    }
+
+    function removeLoadingScreen() {
+      document.body.removeChild(document.querySelector(".loading-screen"));
+    }
+  // ______________________________ PRELOADER ______________________________
+
+
+  // ______________________________ PARALLAX ______________________________
+    const section1 = document.querySelector('.section1');
+    const sectiontext = document.querySelector('.sectiontext');
+    const sections = document.querySelectorAll('.section');
+    const header = document.querySelector('header');
+    const headerLinks = document.querySelectorAll('header a');
+
+    window.addEventListener('scroll', () => {
+      const scrollPos = window.scrollY;
+
+      // Parallax Effect for Section 1
+      section1.style.backgroundPositionY = -scrollPos * 0.7 + 'px';
+
+      // Text Effect for Section 1
+      sectiontext.style.transform = `translateY(${scrollPos * 0.45}px)`;
+
+      // Add/Remove 'active' class to sections and header links
+      sections.forEach((section, index) => {
+        const sectionTop = section.offsetTop - header.clientHeight;
+        const sectionHeight = section.clientHeight;
+        const sectionBottom = sectionTop + sectionHeight;
+
+        if (scrollPos >= sectionTop && scrollPos < sectionBottom) {
+          section.classList.add('active');
+          headerLinks[index].classList.add('active');
+        } else {
+          section.classList.remove('active');
+          headerLinks[index].classList.remove('active');
+        }
+      });
+    });
+  // ______________________________ PARALLAX ______________________________
+
+
+  // ______________________________ ARTICLE ______________________________
+    window.addEventListener("load", function() {
+    var container = document.querySelector(".article-container");
+    var containerHeight = container.offsetHeight;
+    var windowHeight = window.innerHeight;
+    if (containerHeight < windowHeight) {
+      container.style.marginTop = ((windowHeight - containerHeight) / 2) + "px";
+    }
+  });
+  // ______________________________ ARTICLE ______________________________
+
+
+  // ______________________________ CARD IMAGE POP-UP ______________________________
+    const cards = document.querySelectorAll('.card');
+    const popupContainer = document.querySelector('.popup-container');
+    const popupContent = document.querySelector('.popup-content');
+
+    cards.forEach(card => {
+      card.addEventListener('click', () => {
+        const imgSrc = card.querySelector('.card-image img').getAttribute('src');
+        popupContent.innerHTML = `<img src="${imgSrc}" alt="popup image">`;
+        popupContainer.style.display = 'flex';
+        gsap.fromTo(popupContent, {scale: 0.1}, {duration: 0.5, scale: 1, ease: 'back.out(1.7)'});
+      });
+    });
+
+    popupContainer.addEventListener('click', e => {
+      if (e.target === popupContainer) {
+        popupContainer.style.display = 'none';
+      }
+    });
+
+    // Select the element to animate (efek muncul kanan atau kiri layar)
+    const cardContainer = document.querySelector('.card-container');
+
+    // Set initial position to hide the element outside the viewport
+    gsap.set(cardContainer, { x: '100%', opacity: 0 });
+
+    // Animate the element to slide in from the right and bounce
+    gsap.to(cardContainer, {
+      x: '0%',
+      opacity: 1,
+      ease: 'back.out(1.7)',
+      duration: 1.5
+    });
+  // ______________________________ CARD IMAGE POP-UP ______________________________
+
+
+  // ______________________________ FAQ QUESTION ______________________________
+    const faqQuestions = document.querySelectorAll(".faq-question");
+
+    faqQuestions.forEach((faqQuestion) => {
+      const faqAnswer = faqQuestion.querySelector(".faq-answer");
+
+      faqQuestion.addEventListener("click", () => {
+        faqQuestion.classList.toggle("open");
+        faqAnswer.classList.toggle("open");
+        faqAnswer.style.maxHeight = faqQuestion.classList.contains("open") ? `${faqAnswer.scrollHeight}px` : "0";
+      });
+    });
+  // ______________________________ FAQ QUESTION ______________________________
+
+  // ______________________________ TIMER COUNTDOWN ______________________________
+    // Set the date we're counting down to
+  var countDownDate = new Date("May 19, 2023 17:00:00").getTime();
+
+  // Update the count down every 1 second
+  var x = setInterval(function() {
+
+    // Get the current date and time
+    var now = new Date().getTime();
+
+    // Find the distance between now and the countdown date
+    var distance = countDownDate - now;
+
+    // Calculate the days, hours, minutes and seconds remaining
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // Display the countdown timer in the HTML elements
+    document.getElementById("days").innerHTML = days;
+    document.getElementById("hours").innerHTML = hours;
+    document.getElementById("minutes").innerHTML = minutes;
+    document.getElementById("seconds").innerHTML = seconds;
+
+    // If the countdown is over, show an animation or message
+    if (distance < 0) {
+      clearInterval(x);
+      // Add animation or message here
+    }
+  }, 1000);
+  // ______________________________ TIMER COUNTDOWN ______________________________
+
+
+  // ______________________________ FOOTER ______________________________
+  const container = document.querySelector(".container");
+
+  container.addEventListener("mousemove", (e) => {
+    const x = e.clientX / window.innerWidth;
+    const y = e.clientY / window.innerHeight;
+
+    container.style.backgroundPosition = `${x * 100}% ${y * 100}%`;
+  });
+  // ______________________________ FOOTER ______________________________
+
+
+  // ______________________________ SCROLL TO TOP ______________________________
+  const button = document.getElementById("scroll-to-top");
+
+  button.addEventListener("click", function() {
+    // Play rocket animation
+    button.classList.add("active");
+    
+    // Scroll to top
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+
+    // Remove active class after rocket animation is finished
+    setTimeout(function() {
+      button.classList.remove("active");
+    }, 500);
+  });
+
+  window.addEventListener("scroll", function() {
+    if (window.scrollY > 500) {
+      button.style.bottom = "20px";
+    } else {
+      button.style.bottom = "-100px";
+    }
+  });
+  // ______________________________ SCROLL TO TOP ______________________________
+
+
+  // ______________________________ AUDIO ______________________________
+  const audio = document.getElementById('audio');
+  const playPauseBtn = document.getElementById('play-pause-btn');
+
+  playPauseBtn.addEventListener('click', function() {
+    if (audio.paused) {
+      audio.play();
+      playPauseBtn.innerHTML = '<i class="fa fa-pause"></i>';
+    } else {
+      audio.pause();
+      playPauseBtn.innerHTML = '<i class="fa fa-play"></i>';
+    }
+  });
+  // ______________________________ AUDIO ______________________________
+	</script>
+</body>
+</html>

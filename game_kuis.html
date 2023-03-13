@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+  	<link rel="shortcut icon" type="image/x-icon" href="assets/cat-web-icon.png">
+	<title>Game Kuis</title>
+	<style type="text/css">
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: #f8f8f8;
+	font-family: sans-serif;
+}
+
+.container {
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 20px;
+	background-color: #fff;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.header {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+h1 {
+	color: #333;
+	font-size: 2.5rem;
+	margin: 20px 0;
+}
+
+.quiz {
+	margin-bottom: 20px;
+	background-color: #f2f2f2;
+	padding: 20px;
+	border-radius: 5px;
+}
+
+.choices {
+	margin-bottom: 10px;
+}
+
+label {
+	display: block;
+	margin-bottom: 10px;
+}
+
+input[type="radio"] {
+	display: none;
+}
+
+input[type="radio"] + label:before {
+	content: "";
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 10px;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	border: 2px solid #ccc;
+	background-color: #fff;
+	cursor: pointer;
+}
+
+input[type="radio"]:checked + label:before {
+	background-color: #26a69a;
+	border-color: #26a69a;
+}
+
+.submit-btn {
+	display: block;
+	margin: 0 auto;
+	background-color: #26a69a;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	padding: 10px 20px;
+	font-size: 1rem;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+	background-color: #2bbbad;
+}
+
+.score {
+	margin-top: 20px;
+	text-align: center;
+	font-size: 1.5rem;
+	color: #333;
+}
+
+
+	</style>
+</head>
+<body>
+		<div class="container">
+			<div class="header">
+				<h1>Kuis Tampilan Keren</h1>
+			</div>
+			<div id="quiz" class="quiz"></div>
+			<div id="score" class="score"></div>
+			<button id="submit" class="submit-btn">Selesai</button>
+		</div>
+
+
+<script type="text/javascript">
+// Daftar soal dan jawaban
+const questions = [
+  {
+    question: "Siapakah penemu HTML?",
+    choices: ["Bill Gates", "Tim Berners-Lee", "Steve Jobs"],
+    answer: "Tim Berners-Lee",
+  },
+  {
+    question: "Apa singkatan dari CSS?",
+    choices: [
+      "Cascading Style Sheets",
+      "Cascading Scripting Sheets",
+      "Cascading Syntax Sheets",
+    ],
+    answer: "Cascading Style Sheets",
+  },
+  {
+    question: "Apa fungsi dari JavaScript?",
+    choices: [
+      "Membuat tampilan halaman web",
+      "Membuat interaksi pada halaman web",
+      "Mengatur server",
+    ],
+    answer: "Membuat interaksi pada halaman web",
+  },
+];
+
+// Fungsi untuk menampilkan soal-soal dan jawaban-jawaban
+function showQuestions() {
+  const quizContainer = document.getElementById("quiz");
+  let output = "";
+
+  questions.forEach((question, index) => {
+    let choices = "";
+
+    for (let i = 0; i < question.choices.length; i++) {
+      choices += `
+        <label>
+          <input type="radio" name="question${index}" value="${question.choices[i]}">
+          <span>${question.choices[i]}</span>
+        </label>
+      `;
+    }
+
+    output += `
+      <div class="question-container">
+        <h2 class="question">${question.question}</h2>
+        <div class="choices-container">${choices}</div>
+      </div>
+    `;
+  });
+
+  quizContainer.innerHTML = output;
+}
+
+// Fungsi untuk menghitung skor
+function calculateScore() {
+  const answerContainers = document.querySelectorAll(".choices-container");
+  let score = 0;
+
+  questions.forEach((question, index) => {
+    const answerContainer = answerContainers[index];
+    const selected = answerContainer.querySelector(
+      `input[name=question${index}]:checked`
+    );
+    const answer = question.answer;
+
+    if (selected && selected.value === answer) {
+      score++;
+      answerContainer.classList.add("correct");
+    } else {
+      answerContainer.classList.add("incorrect");
+    }
+  });
+
+  const scoreContainer = document.getElementById("score");
+  scoreContainer.innerHTML = `Skor Anda: ${score} dari ${questions.length}`;
+}
+
+// Fungsi untuk menampilkan tombol submit dan hasil skor
+function showResult() {
+  const quizContainer = document.getElementById("quiz");
+  const submitButton = document.getElementById("submit");
+  const resultContainer = document.createElement("div");
+  resultContainer.id = "result";
+  quizContainer.appendChild(resultContainer);
+
+  submitButton.addEventListener("click", () => {
+    calculateScore();
+    submitButton.style.display = "none";
+  });
+}
+
+// Memanggil fungsi untuk menampilkan soal-soal dan jawaban-jawaban
+showQuestions();
+
+// Memanggil fungsi untuk menampilkan tombol submit dan hasil skor
+showResult();
+
+</script>
+</body>
+</html>
